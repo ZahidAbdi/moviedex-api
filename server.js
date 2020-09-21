@@ -31,13 +31,13 @@ function handleGetMovies(req, res) {
   // Search by Genre
   if (req.query.genre) {
     movies = movies.filter(
-      (movie) => req.query.genre.toLowerCase() === movie.genre.toLowerCase()
+      (movie) => movie.genre.toLowerCase().includes(req.query.genre.toLowerCase()
     );
   }
   // Search by Country
   if (req.query.country) {
     movies = movies.filter(
-      (movie) => req.query.country.toLowerCase() === movie.country.toLowerCase()
+      (movie) => movie.country.toLowerCase().includes(req.query.country.toLowerCase()
     );
   }
 
